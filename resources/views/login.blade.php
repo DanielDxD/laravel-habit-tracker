@@ -2,7 +2,7 @@
     <main class="py-10 max-w-[720px] mx-auto px-2">
         <h1 class="text-3xl font-bold mb-10">Entre com sua conta</h1>
 
-        <form class="flex flex-col gap-4" action="/login" method="POST">
+        <form class="flex flex-col gap-4" action="{{ route('auth.login') }}" method="POST">
             @csrf
 
             <div>
