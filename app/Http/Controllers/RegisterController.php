@@ -14,7 +14,8 @@ class RegisterController extends Controller
         return view('register');
     }
 
-    public function store(RegisterRequest $request) {
+    public function store(RegisterRequest $request)
+    {
         $user = User::query()->create([
             'name' => $request->input('name'),
             'email' => $request->input('email'),

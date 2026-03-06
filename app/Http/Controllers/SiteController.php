@@ -6,7 +6,7 @@ class SiteController extends Controller
 {
     public function index()
     {
-        $name = "Daniel";
+        $name = 'Daniel';
         $habits = ['Ler', 'Correr', 'Estudar'];
 
         return view('home', compact('name', 'habits'));
