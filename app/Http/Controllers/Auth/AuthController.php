@@ -14,11 +14,6 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function dashboard()
-    {
-        return view('dashboard');
-    }
-
     public function login(LoginRequest $request)
     {
         $credentials = $request->only('email', 'password');

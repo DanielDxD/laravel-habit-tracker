@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class HabitLog extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'user_id',
         'habit_id',

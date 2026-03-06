@@ -6,9 +6,15 @@ class SiteController extends Controller
 {
     public function index()
     {
-        $name = 'Daniel';
-        $habits = ['Ler', 'Correr', 'Estudar'];
+        return view('home');
+    }
 
-        return view('home', compact('name', 'habits'));
+    public function dashboard(\Illuminate\Http\Request $request)
+    {
+        /** @var \App\Models\User $user */
+        $user = $request->user();
+        $habits = $user->habits;
+
+        return view('dashboard', compact('habits'));
     }
 }

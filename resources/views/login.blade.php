@@ -3,7 +3,7 @@
         <section class="max-w-[600px] mx-auto p-10 border-2 mt-4 bg-white">
             <h1 class="text-3xl font-bold mb-10">Entre com sua conta</h1>
 
-            <form class="flex flex-col gap-4" action="{{ route('register.store') }}" method="POST">
+            <form class="flex flex-col gap-4" action="{{ route('auth.login') }}" method="POST">
                 @csrf
 
                 <div class="flex flex-col gap-2 mb-4">

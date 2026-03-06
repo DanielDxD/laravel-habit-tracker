@@ -42,4 +42,14 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get the habits for the user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany<\App\Models\Habit, $this>
+     */
+    public function habits(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Habit::class);
+    }
 }
