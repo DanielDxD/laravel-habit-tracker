@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Habit;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -12,13 +13,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('habits', function (Blueprint $table) {
+        Schema::create('habit_logs', function (Blueprint $table) {
             $table->id();
             $table
                 ->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete();
-            $table->string('name');
+            $table
+                ->foreignIdFor(Habit::class)
+                ->constrained()
+                ->cascadeOnDelete();
+            $table->date('completed_at');
             $table->timestamps();
         });
     }
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('habits');
+        Schema::dropIfExists('habit_logs');
     }
 };
